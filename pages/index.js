@@ -1,21 +1,21 @@
+import ReactMarkdown from "react-markdown";
+
 import styles from './index.module.css';
-import marked from 'marked';
+
 import paths from "../constants/paths";
 import Layout from "../components/Layout";
 
-const landingContent = marked(`
-## My name is Owen, I make websites!
-
-I also have hobby projects in game development/device programming/VR that I'll post about here as
-I can get them in a shareable state :)
-
-Github: https://github.com/owenlow
-`);
-
-export default function Home() {
+function Home({ landingContent }) {
     return (
         <Layout currentPage={paths.landing.id}>
-            <div className={styles.contentContainer} dangerouslySetInnerHTML={{__html: landingContent}}/>
+            <ReactMarkdown className={styles.contentContainer} source={landingContent}/>
         </Layout>
     );
+}
+
+Home.getInitialProps = async () => {
+    const fileContents = await import(`../content/landing.md`);
+    return { landingContent: fileContents.default };
 };
+
+export default Home;
