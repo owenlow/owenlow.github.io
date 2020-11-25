@@ -3,4 +3,4 @@
 I also have hobby projects in game development/device programming/VR that I'll post about here as
 I can get them in a shareable state :)
 
-Github: https://github.com/owenlow
+Github: [github.com/owenlow](https://github.com/owenlow)

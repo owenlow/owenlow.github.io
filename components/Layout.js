@@ -1,5 +1,6 @@
 import styles from './Layout.module.css';
 import Head from "next/head";
+import { Container } from 'react-bootstrap';
 import classnames from 'classnames';
 
 import Header from './Header';
@@ -14,7 +15,9 @@ export default function Layout({children, currentPage}) {
                 <link rel='stylesheet' href={'https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/simplex/bootstrap.min.css'}/>
             </Head>
             <Header currentPage={currentPage}/>
-            {children}
+            <Container className={classnames(styles.contentContainer, 'd-flex', 'flex-column')}>
+                {children}
+            </Container>
             <Footer/>
         </div>
     );

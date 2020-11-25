@@ -8,7 +8,7 @@ import Layout from "../components/Layout";
 function Home({ landingContent }) {
     return (
         <Layout currentPage={paths.landing.id}>
-            <ReactMarkdown className={styles.contentContainer} source={landingContent}/>
+            <ReactMarkdown className={styles.landingContentContainer} source={landingContent}/>
         </Layout>
     );
 }
